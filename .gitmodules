@@ -1,0 +1,12 @@
+[submodule "erlyweb"]
+	path = erlyweb
+	url = git://github.com/yariv/erlyweb.git
+[submodule "yaws"]
+	path = yaws
+	url = git://github.com/klacke/yaws.git
+[submodule "deps/erlyweb"]
+	path = deps/erlyweb
+	url = git://github.com/yariv/erlyweb.git
+[submodule "deps/yaws"]
+	path = deps/yaws
+	url = git://github.com/klacke/yaws.git
