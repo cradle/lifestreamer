@@ -1,0 +1,2 @@
+-module(post_controller).
+-erlyweb_magic(erlyweb_controller).
