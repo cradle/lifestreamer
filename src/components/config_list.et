@@ -1,0 +1,11 @@
+<%@ index(Data) %>
+<h2>configs</h2>
+<ul><% [config(Config) || Config <- Data] %></ul>
+
+<%@ config(Data) %>
+<li>
+  <strong><% config:key(Data) %></strong>
+    : 
+  <em><% config:value(Data) %></em>
+</li>
+

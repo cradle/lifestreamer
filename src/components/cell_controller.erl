@@ -1,2 +1,2 @@
--module(post_controller).
+-module(cell_controller).
 -erlyweb_magic(erlyweb_controller).
