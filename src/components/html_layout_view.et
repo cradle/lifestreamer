@@ -1,0 +1,23 @@
+<%@ index(Data) %>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/screen.css" /> 
+</style>
+</head>
+<body>
+<div id="controls">
+  <h1>Creation</h1>
+  <% cell_view:new() %>
+</div>
+<div id="content">
+  <h1>Works</h1>
+  <% Data %>
+</div>
+<div id="navigation">
+  <ul>
+    <li><a href="/config">configs</a></li>
+    <li><a href="/cell">cells</a></li>
+  <ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<%@ index(Data) %>
+<h2>Configging</h2>
+<% new() %>
+<ul><% [config(Config) || Config <- Data] %></ul>
+
+<%@ config(Data) %>
+<li>
+  <strong><% config:key(Data) %></strong>
+    : 
+  <em><% config:value(Data) %></em>
+</li>
+
+<%@ new() %>
+<form action="/config/new" method="post">
+<% input("key") %>
+<% input("value") %>
+  <input type="submit">
+</form>
+<%@ input(Name) %>
+  <label for="<% Name %>"><% Name %>
+    <input type="text" name="<% Name %>" />
+  </label>

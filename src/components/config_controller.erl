@@ -1,7 +1,7 @@
 -module(config_controller).
 -export([index/1, new/1]).
 
-index(_) ->
+index(Data) ->
   Configs = config:find(),
   {data, Configs}.
 

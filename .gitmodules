@@ -10,3 +10,6 @@
 [submodule "deps/yaws"]
 	path = deps/yaws
 	url = git://github.com/klacke/yaws.git
+[submodule "deps/uuid"]
+	path = deps/uuid
+	url = git://github.com/akreiling/erlang-uuid.git

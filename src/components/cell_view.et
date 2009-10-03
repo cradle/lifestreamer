@@ -1,0 +1,49 @@
+<%@ index(Data) %>
+<ul><% [cell(Cell) || Cell <- lists:reverse(Data)] %></ul>
+
+<%@ cell(Data) %>
+<li>
+   <pre><% cell:body(Data) %></pre>
+   <!-- <ul>
+   <li>
+     <form action="/cell/edit/" >
+       <input type="submit" value="edit" />
+    </form>
+  </li>
+   <li>
+     <form action="/cell/destroy/" >
+       <input type="submit" value="Delete" />
+    </form>
+  </li>
+ </ul> -->
+</li>
+
+<%@ new() %>
+<form action="/cell/new/generic" method="post">
+  <fieldset>
+    <legend>Generic</legend>
+    <% input("body") %>
+    <input type="submit" value="spawn" />
+  </fieldset>
+</form>
+<form action="/cell/new/url" method="post">
+  <fieldset>
+    <legend>Link</legend>
+    <% input("url") %>
+    <% input("title") %>
+    <input type="submit" value="spawn" />
+  </fieldset>
+</form>
+<form action="/cell/new/generic" method="post">
+  <fieldset>
+    <legend>Long</legend>
+    <textarea name="body"></textarea>
+    <input type="submit" value="spawn" />
+  </fieldset>
+</form>
+
+<%@ input(Name) %>
+<label for="<% Name %>"><% Name %></label>
+<% input(Name, "text") %>
+<%@ input(Name, Type) %>
+<input class="<% Name %>" type="<% Type %>" name="<% Name %>" />

@@ -1,4 +1,4 @@
--module(html_container_controller).
+-module(html_layout_controller).
 -export([private/0, index/2]).
 
 private() ->
