@@ -1,7 +1,8 @@
 <%@ index(Data) %>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="/screen.css" /> 
+<link rel="stylesheet" type="text/css" href="/layout.css" /> 
+<link rel="stylesheet" type="text/css" href="/styles.css" /> 
 </style>
 </head>
 <body>

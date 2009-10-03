@@ -1,7 +1,8 @@
 -module(cell_controller).
+-import(markdown).
 -export([index/1, new/1,  new/2]).
 
-index(Data) ->
+index(_) ->
   Cells = cell:find(),
   {data, Cells}.
 
@@ -15,6 +16,12 @@ new(A, Type) ->
           {ok, Url} = yaws_api:getvar(A, "url"),
           {ok, Title} = yaws_api:getvar(A, "title"),
           Vals = [{"body", "<a href=" ++ Url ++ ">" ++ Title ++ "</a>"}],
+          create_from_strings(Vals),
+          {ewr, cell, index};
+        "markdown" ->
+          {ok, Body} = yaws_api:getvar(A, "body"),
+          HtmlBody = markdown:conv(Body),
+          Vals = [{"body", HtmlBody}],
           create_from_strings(Vals),
           {ewr, cell, index}
       end

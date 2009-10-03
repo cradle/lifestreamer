@@ -1,0 +1,112 @@
+body, pre {
+  font-size: 0.9em;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: Georgia, serif;
+}
+
+h1 {
+  font-size: 2.0em;
+}
+
+fieldset {
+  padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+div.cell {
+  padding: 1em;
+  color: #555;
+  border: 1px solid #f0f0f0;
+}
+
+div.cell-wrapper {
+  padding: 1em;
+  background: #f8f8f8;
+}
+
+div.cell-wrapper div.cell {
+  background-color: white;
+}
+
+div.cell-wrapper:hover {
+  background-color: #fafafa;  
+}
+
+div.cell-wrapper-wrapper {
+  background-color: white;
+  float: left;
+  clear: left;
+  padding: 1em;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+div br {
+  display: none;
+}
+
+div.cell p {
+  padding: 0;
+  margin: 0.5em 0 0.1em;
+}
+
+div.cell h1 {
+  color: #444;
+  margin-left: 1em;
+}
+
+fieldset, fieldset legend {
+  border: 1px solid #eee;
+  background-color: #fafafa;
+}
+
+fieldset legend {
+  border-bottom-color: #ccc;
+}
+
+textarea {
+  height: 15em;
+}
+
+#controls {
+  padding-right: 1.5em;
+}
+
+#controls label {
+  display: none;
+}
+
+#controls input.text, #controls textarea {
+  width: 16em;
+}
+
+#controls input.submit {
+  float: right;
+  margin-right: 1.5em;
+}
+
+#content h1 {
+  margin-bottom: 0.5em;
+}
+
+#content ul {
+  padding: 0 2.0em;
+}
+
+#content ul li h1 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#content ul li pre {
+  margin: 0;
+}

@@ -13,3 +13,9 @@
 [submodule "deps/uuid"]
 	path = deps/uuid
 	url = git://github.com/akreiling/erlang-uuid.git
+[submodule "deps/markdown"]
+	path = deps/markdown
+	url = git://github.com/gordonguthrie/erlmarkdown.git
+[submodule "src/markdown"]
+	path = src/markdown
+	url = git://github.com/gordonguthrie/erlmarkdown.git

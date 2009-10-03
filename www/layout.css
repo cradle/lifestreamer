@@ -1,0 +1,12 @@
+#controls {
+  width: 12.5em;
+  float: right;
+}
+#content {
+  width: 80%;
+  float: left;
+}
+#navigation {
+  width: 100%;
+  float: left;
+}

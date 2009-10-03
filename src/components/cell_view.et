@@ -3,19 +3,13 @@
 
 <%@ cell(Data) %>
 <li>
-   <pre><% cell:body(Data) %></pre>
-   <!-- <ul>
-   <li>
-     <form action="/cell/edit/" >
-       <input type="submit" value="edit" />
-    </form>
-  </li>
-   <li>
-     <form action="/cell/destroy/" >
-       <input type="submit" value="Delete" />
-    </form>
-  </li>
- </ul> -->
+   <div class="cell-wrapper-wrapper">
+     <div class="cell-wrapper">
+       <div class="cell">
+        <% cell:body(Data) %>
+       </div>
+     </div>
+   </div>
 </li>
 
 <%@ new() %>
@@ -23,7 +17,7 @@
   <fieldset>
     <legend>Generic</legend>
     <% input("body") %>
-    <input type="submit" value="spawn" />
+    <input type="submit" class="submit" value="spawn" />
   </fieldset>
 </form>
 <form action="/cell/new/url" method="post">
@@ -31,14 +25,23 @@
     <legend>Link</legend>
     <% input("url") %>
     <% input("title") %>
-    <input type="submit" value="spawn" />
+    <input type="submit" class="submit"  value="spawn" />
+  </fieldset>
+</form>
+<form action="/cell/new/markdown" method="post">
+  <fieldset>
+    <legend><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></legend>
+    <label for="body">Body</label>
+    <textarea name="body"></textarea>
+    <input type="submit" class="submit"  value="spawn" />
   </fieldset>
 </form>
 <form action="/cell/new/generic" method="post">
   <fieldset>
-    <legend>Long</legend>
+    <legend>HTML</legend>
+    <label for="body">Body</label>
     <textarea name="body"></textarea>
-    <input type="submit" value="spawn" />
+    <input type="submit" class="submit"  value="spawn" />
   </fieldset>
 </form>
 
@@ -46,4 +49,4 @@
 <label for="<% Name %>"><% Name %></label>
 <% input(Name, "text") %>
 <%@ input(Name, Type) %>
-<input class="<% Name %>" type="<% Type %>" name="<% Name %>" />
+<input class="<% Name %> <% Type %>" type="<% Type %>" name="<% Name %>" value="<% Name %>"/>
