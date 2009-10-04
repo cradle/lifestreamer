@@ -12,6 +12,13 @@ new(A, Type) ->
       case Type of
         "generic" ->
           new(A);
+        "short" ->
+          {ok, Body} = yaws_api:getvar(A, "body"),
+          MarkdownBody = "#" ++ Body ++ "#",
+          HtmlBody = markdown:conv(MarkdownBody),
+          Vals = [{"body", HtmlBody}],
+          create_from_strings(Vals),
+          {ewr, cell, index};
         "url" ->
           {ok, Url} = yaws_api:getvar(A, "url"),
           {ok, Title} = yaws_api:getvar(A, "title"),

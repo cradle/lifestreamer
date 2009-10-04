@@ -13,9 +13,9 @@
 </li>
 
 <%@ new() %>
-<form action="/cell/new/generic" method="post">
+<form action="/cell/new/short" method="post">
   <fieldset>
-    <legend>Generic</legend>
+    <legend>Quicky</legend>
     <% input("body") %>
     <input type="submit" class="submit" value="spawn" />
   </fieldset>

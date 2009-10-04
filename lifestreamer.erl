@@ -40,6 +40,9 @@ join(MasterNode) ->
   Tabs = mnesia:system_info(tables) -- [schema],
   [mnesia:add_table_copy(Tab,node(), disc_copies) || Tab <- Tabs].
 
+bootstrap() ->
+  create_table(migration).
+
 migrate() ->
   mnesia:stop(),
   mnesia:create_schema([node()]),
