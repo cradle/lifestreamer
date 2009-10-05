@@ -7,11 +7,9 @@
 </head>
 <body>
 <div id="controls">
-  <h1>Creation</h1>
   <% cell_view:new() %>
 </div>
 <div id="content">
-  <h1>Works</h1>
   <% Data %>
 </div>
 <div id="navigation">
