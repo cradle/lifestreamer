@@ -18,8 +18,8 @@ start() ->
     yaws_api:setconf(GC, [[SC]]).
 
 console() ->
-  mnesia:start(),
-  compile().
+  compile(),
+  application:start(mnesia).
 
 compile() ->
   {ok, CurDir} = file:get_cwd(),
@@ -44,11 +44,12 @@ bootstrap() ->
   create_table(migration).
 
 migrate() ->
-  mnesia:stop(),
-  mnesia:create_schema([node()]),
-  mnesia:start(),
-  create_table(cell),
-  create_table(config).
+  % mnesia:stop(),
+  % mnesia:create_schema([node()]),
+  % mnesia:start(),
+  % create_table(cell),
+  % create_table(config).
+  create_table(descendant).
 
 create_table(Name) ->
   mnesia:create_table(Name,

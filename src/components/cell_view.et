@@ -1,5 +1,25 @@
-<%@ index(Data) %>
-<ul><% [cell(Cell) || Cell <- lists:reverse(Data)] %></ul>
+<%@ index(Cells) %>
+<ul><% [cell(Cell) || Cell <- lists:reverse(Cells)] %></ul>
+
+<%@ clone(Data) %>
+<%? [{cells, Cells}, {cell, Cell}] = Data %>
+<ul><li>
+   <div class="cell-wrapper-wrapper">
+     <div class="cell-wrapper">
+       <div class="cell">
+        <form action="/cell/new/generic" method="post">
+          <fieldset>
+            <legend>HTML</legend>
+            <label for="body">Body</label>
+            <textarea name="body" id="cloned"><% Cell %></textarea>
+            <input type="submit" class="submit"  value="spawn" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  <div>
+</li></ul>
+<% index(Cells) %>
 
 <%@ cell(Data) %>
 <li>
@@ -8,6 +28,10 @@
        <div class="cell">
         <% cell:body(Data) %>
        </div>
+       <form method="post" action="/cell/clone">
+         <input name="body" value="<% cell:body_encoded(Data) %>" type="hidden" />
+         <input type="submit" value="clone" />
+        </form>
      </div>
    </div>
 </li>
@@ -44,6 +68,7 @@
     <input type="submit" class="submit"  value="spawn" />
   </fieldset>
 </form>
+
 
 <%@ input(Name) %>
 <label for="<% Name %>"><% Name %></label>
