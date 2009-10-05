@@ -13,6 +13,5 @@ create_from_strings(Vals) ->
 
 body_encoded(Cell) ->
   Body = cell:body(Cell),
-  % LeftEscapedBody = re:gsub(Body, "<", "&lt;").
-  % http://www.erlang.org/doc/man/re.html
-  Body.
+  EscapedBody = re:replace(Body, "\"", "'", [global]),
+  EscapedBody.

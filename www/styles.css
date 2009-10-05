@@ -122,18 +122,14 @@ textarea {
   margin: 0;
 }
 #content .cell blockquote p:before {
-  content:"&#8220;";
+  content:'"';
 }
 #content .cell blockquote p:after {
-  content:'&#8221;';
+  content:'"';
 }
 #content .cell blockquote {
   font-style: italic;
   padding: 0.3em 2em;
-}
-#content form {
-  padding: 0;
-  margin: 0;
 }
 
 #content form fieldset label {
