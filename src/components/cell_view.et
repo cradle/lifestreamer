@@ -37,21 +37,6 @@
 </li>
 
 <%@ new() %>
-<form action="/cell/new/short" method="post">
-  <fieldset>
-    <legend>Quicky</legend>
-    <% input("body") %>
-    <input type="submit" class="submit" value="spawn" />
-  </fieldset>
-</form>
-<form action="/cell/new/url" method="post">
-  <fieldset>
-    <legend>Link</legend>
-    <% input("url") %>
-    <% input("title") %>
-    <input type="submit" class="submit"  value="spawn" />
-  </fieldset>
-</form>
 <form action="/cell/new/markdown" method="post">
   <fieldset>
     <legend><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></legend>
