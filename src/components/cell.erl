@@ -9,6 +9,10 @@ relations() ->
 
 create_from_strings(Vals) ->
   Record = cell:new_from_strings(Vals),
+  Body = cell:body(Record),
+  Id = crypto:sha(Body),
+  RecordWithId = cell:id(Record, Id),
+  io:format("~p", [Record]),
   cell:save(Record).
 
 body_encoded(Cell) ->
